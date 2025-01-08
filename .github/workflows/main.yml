@@ -25,4 +25,5 @@ jobs:
       - name: Deploy 🚀
         env:
           BASE_URL: ${{ vars.BASE_URL }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: ng deploy --base-href="$BASE_URL"
