@@ -23,7 +23,9 @@ jobs:
           npm install
 
       - name: Deploy 🚀
-        env:
-          BASE_URL: ${{ vars.BASE_URL }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: ng deploy --base-href="$BASE_URL"
+        uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.4.0
+        with:
+          github_access_token: ${{ secrets.GITHUB_TOKEN }}
+          build_configuration: production
+          base_href: ${{ vars.BASE_URL }}
+          deploy_branch: gh-pages
